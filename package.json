@@ -4,10 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -p --env.production=false --env.platform=web --progress --watch"
+    "build": "webpack -p --env.production --env.platform=web --progress --watch"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
     "vue": "^2.1.10"
   },
   "devDependencies": {

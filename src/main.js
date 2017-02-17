@@ -1,7 +1,7 @@
 
 /* global vue */
 /* eslint-disable */
-import _ from 'lodash';
+//import _ from 'lodash';
 import Vue from 'vue';
 import apiKey from '../testModule/config';
 import phone from '../testModule/config';
@@ -10,8 +10,15 @@ import phone from '../testModule/config';
 const init = function () {
     // create a new div element
     // and give it some content
+    console.log("Running App version " + VERSION);
+    if (!PRODUCTION) console.log('Debug info')
+    if (PRODUCTION) console.log('Production log')
+
+
     const newDiv = document.createElement("div");
-    const newContent = document.createTextNode(` there and greetings-${_.partition([1, 2, 3, 4], n => n % 2)}`);
+    //const newContent = document.createTextNode(` there and greetings-${_.partition([1, 2, 3, 4], n => n % 2)}`);
+    const newContent = document.createTextNode(`xxx and greetings`);
+
     newDiv.appendChild(newContent);
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("div1");
@@ -34,9 +41,9 @@ const init = function () {
 
     const vueApp = new Vue({
       el: '#root',
-    
+
       data: {
-        a: 'xxxxxd',
+        headline: 'this is the headline',
         someList: [
           { text: apiKey },
           { text: "xxLearn JavaScript" },
