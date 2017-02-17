@@ -7,7 +7,7 @@ module.exports = (env = {}) => {
   // Variables set by npm scripts in package.json
   const isProduction = env.production === true;
   const platform = env.platform; // 'default' by default
-
+const version = env.version;
 
   return {
     devtool: (() => {
@@ -58,12 +58,10 @@ module.exports = (env = {}) => {
           template: 'src/index.html',
         }),
         new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(true),
-            VERSION: JSON.stringify("5fa3b9"),
+            PRODUCTION: JSON.stringify(isProduction),
+            VERSION: JSON.stringify(version),
             BROWSER_SUPPORTS_HTML5: true,
-            TWO: "1+1",
-            "typeof window": JSON.stringify("object")
-        })
+        }),
          //createVendorChunk()
       // new webpack.optimize.CommonsChunkPlugin({
       //   name: "vendor",
