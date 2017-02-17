@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My App</title>
+</head>
+<body>
+
+  <div id='root'>
+    <h1>my test</h1>
+<h2>{{headline}}</h2>
+    <div>
+      <ol>
+
+        <todo-item v-for='item in someList' :todo='item'></todo-item>
+        <!-- <todo-item>learn spanish</todo-item>
+        <todo-item>learn english</todo-item>
+          <todo-item>learn frnech</todo-item> -->
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>
