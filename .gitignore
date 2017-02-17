@@ -1,1 +1,5 @@
 /node_modules
+/npm-debug.log
+/dist/my-first-webpack.bundle.js
+/dist/my-first-webpack.bundle.js.map
+/es6-module-instructions.md
