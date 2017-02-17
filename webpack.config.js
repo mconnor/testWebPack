@@ -7,24 +7,24 @@ module.exports = (env = {}) => {
   // Variables set by npm scripts in package.json
   const isProduction = env.production === true;
   const platform = env.platform; // 'default' by default
-const version = env.version;
+  const version = env.version;
 
   return {
     devtool: (() => {
       if (isProduction) return 'hidden-source-map'
-      else return 'cheap-module-eval-source-map'
+      else return 'eval'
     })(),
     entry: {
       filename: ['./src/main.js'],
       // ,
-      // vendor: ["vue"],
-      // sourceMapFilename: '[name].map'
+      vendor: ["vue"],
+
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].bundle.js',
       // ,
-      // sourceMapFilename: '[name].map'
+      sourceMapFilename: '[file].map'
     },
     resolve: {
       alias: {
@@ -63,16 +63,16 @@ const version = env.version;
             BROWSER_SUPPORTS_HTML5: true,
         }),
          //createVendorChunk()
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name: "vendor",
-      //
-      //   //filename: "vendor.js"
-      //   // (Give the chunk a different name)
-      //
-      // //  minChunks: Infinity,
-      //   // (with more entries, this ensures that no other module
-      //   //  goes into the vendor chunk)
-      // })
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "vendor",
+
+        filename: "mylib.js"
+        // (Give the chunk a different name)
+
+      //  minChunks: Infinity,
+        // (with more entries, this ensures that no other module
+        //  goes into the vendor chunk)
+      })
     ]
   };
 };

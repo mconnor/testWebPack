@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -p --env.production --env.platform=web --env.version='1.0.0' --progress --watch"
+    "build": "webpack -p --env.production=true --env.platform=web --env.version='1.0.0' --progress --watch",
+    "dev": "webpack -p --env.production=false --env.platform=web --env.version='1.0.0' --progress --watch"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "vue": "^2.1.10"
   },
   "devDependencies": {
