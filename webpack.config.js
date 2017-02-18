@@ -29,6 +29,7 @@ module.exports = (env = {}) => {
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.common.js',
+        bulma$: 'bulma',
       },
     },
     module: {
@@ -40,13 +41,17 @@ module.exports = (env = {}) => {
           query: {
             presets: ['es2015-native-modules'],
           },
-        }
+        },
+        {
+          test: /\.scss$/,
+          loader: 'style-loader!css-loader!sass-loader',
+        },
       ],
     },
     plugins: [
       //new webpack.optimize.UglifyJsPlugin(),
       new HtmlWebpackPlugin({
-        title: 'My App',
+        title: 'Some App',
           template: 'src/index.html',
         }),
         new webpack.DefinePlugin({

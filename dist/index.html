@@ -7,19 +7,34 @@
 </head>
 <body>
 
-  <div id='root'>
-    <h1>my test</h1>
-<h2>{{headline}}</h2>
-    <div>
-      <ol>
-
-        <todo-item v-for='item in someList' :todo='item'></todo-item>
-        <!-- <todo-item>learn spanish</todo-item>
-        <todo-item>learn english</todo-item>
-          <todo-item>learn frnech</todo-item> -->
-      </ol>
+  <div class="section is-large" id='root'>
+    <div class="hero  is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title" v-cloak>{{headline}}</h1>
+        </div>
+      </div>
     </div>
-  </div>
+    <div id='main-container container'>
+      <div class='box'>
+        <ol>
+          <todo-item v-cloak v-for='item in someList' :todo='item'></todo-item>
+        </ol>
+      </div>
+      <div class='box'>
+        <ol>
+          <todo-item v-cloak v-for='item in someList' :todo='item'></todo-item>
+        </ol>
+      </div>
+    </div>
+    <footer class="footer">
+            <div class="container">
+              <div class="content has-text-centered">
+                <bottom-aside v-cloak></bottom-aside>
+              </div>
+            </div>
+    </footer>
+</div>
 
 <script type="text/javascript" src="mylib.js"></script><script type="text/javascript" src="filename.bundle.js"></script></body>
 </html>
