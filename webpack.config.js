@@ -30,14 +30,6 @@ module.exports = (env = {}) => {
       alias: {
         vue$: 'vue/dist/vue.common.js',
       },
-      // alias: (() => {
-      //   if (isProduction) {
-      //     return { vue$: 'vue/dist/vue.runtime.common.js' };
-      //   } else {
-      //     return { vue$: 'vue/dist/vue.common.js' };
-      //   }
-      // })()
-
     },
     module: {
       rules: [
@@ -65,7 +57,6 @@ module.exports = (env = {}) => {
          //createVendorChunk()
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
-
         filename: "mylib.js"
         // (Give the chunk a different name)
 

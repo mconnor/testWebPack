@@ -5,8 +5,8 @@ import _ from 'lodash';
 import Vue from 'vue';
 import apiKey from '../testModule/config';
 import phone from '../testModule/config';
-(
-function () {
+
+//function() {
     // create a new div element
     // and give it some content
     console.log("Running App version " + VERSION);
@@ -53,6 +53,6 @@ function () {
         console.log('a is: ' + this.a)
       }
     });
-})();
+//};
 //init();
 //document.addEventListener('DOMContentLoaded', init);
